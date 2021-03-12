@@ -4,5 +4,6 @@
 
 ### Detalhes
 
+###### Utilizado arquitetura MVC
 ###### Desenvolvimento orientado a objetos
 ###### Template retirado do AdminLte
