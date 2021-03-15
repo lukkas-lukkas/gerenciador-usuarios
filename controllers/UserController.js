@@ -16,6 +16,10 @@ class UserController {
 
             let values = this.getValues();
 
+            if(!values){
+                return false;
+            }
+
             this.getPhoto().then(
                 (content)=>{
                     values.photo = content;
@@ -47,7 +51,7 @@ class UserController {
                     user[field.name] = field.value;
                 }
             } else if(field.name == 'admin'){
-                user[field.name] = field.checked ? 'Sim' : 'Não';
+                user[field.name] = field.checked;
             } else {
                 user[field.name] = field.value;
             }
@@ -93,11 +97,13 @@ class UserController {
 
         let tr = document.createElement('tr');
 
+        tr.dataset.user = JSON.stringify(dataUser);
+
         tr.innerHTML = `
             <td><img src="${dataUser.photo}" alt="User Image" class="img-circle img-sm"></td>
             <td>${dataUser.name}</td>
             <td>${dataUser.email}</td>
-            <td>${dataUser.admin}</td>
+            <td>${dataUser.admin ? 'Sim' : 'Não'}</td>
             <td>${Utils.dateFormat(dataUser.register)}</td>
             <td>
             <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
@@ -106,5 +112,24 @@ class UserController {
         `;
 
         this.tableEl.appendChild(tr);
+
+        this.updateCount();
+    }
+
+    updateCount(){
+        let numberUsers = 0;
+        let numberAdmin = 0;
+
+        [...this.tableEl.children].forEach(tr=>{
+            numberUsers++;
+            let user = JSON.parse(tr.dataset.user);
+            console.log
+            if(user._admin){
+                numberAdmin++;
+            }
+        });
+
+        document.querySelector('#number-users').innerHTML = numberUsers;
+        document.querySelector('#number-users-admin').innerHTML = numberAdmin;
     }
 }
