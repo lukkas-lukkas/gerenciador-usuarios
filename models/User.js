@@ -51,4 +51,14 @@ class User {
     get register(){
         return this._register;
     }
+
+    loadFromJson(json){
+        for (let name in json){
+            if(name == '_register'){
+                this[name] = new Date(json[name]);
+            } else {
+                this[name] = json[name];
+            }
+        }
+    }
 }
