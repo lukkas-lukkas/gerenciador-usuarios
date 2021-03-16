@@ -1,6 +1,6 @@
 # Gerenciador de usuários
 
-## Single page apliccation para gerenciamento de usuários desenvolvido com Javascript.
+## Single page application para gerenciamento de usuários desenvolvido com Javascript.
 ###### Acesse em [https://lukkaslima.com/adm-usuarios](https://lukkaslima.com/adm-usuarios "Gerenciador de usuários")
 
 ### Detalhes
