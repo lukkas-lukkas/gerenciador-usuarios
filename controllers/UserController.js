@@ -23,6 +23,7 @@ class UserController {
             let values = this.getValues(this.formUpdateEl);
 
             if(!values){
+                button.disabled = false;
                 return false;
             }
 
