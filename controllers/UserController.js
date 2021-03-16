@@ -74,6 +74,7 @@ class UserController {
             let values = this.getValues(this.formEl);
 
             if(!values){
+                button.disabled = false;
                 return false;
             }
 
