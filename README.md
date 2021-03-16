@@ -1,4 +1,4 @@
-# gerenciadorusuarios.lukkaslima.com
+# Gerenciador de usuários
 
 ## Single page apliccation para gerenciamento de usuários desenvolvido com Javascript.
 
